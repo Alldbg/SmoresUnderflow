@@ -8,6 +8,7 @@
     "http-proxy-middleware": "^0.19.1",
     "js-cookie": "^2.2.0",
     "jsonwebtoken": "^8.5.1",
+    "query-string": "7.1.3",
     "react": "^16.8.4",
     "react-cookie": "^3.1.1",
     "react-dom": "^16.8.4",
@@ -36,15 +37,6 @@
     "typescript": "^3.3.4000"
   },
   "homepage": "http://smores.cse356.compas.cs.stonybrook.edu",
-  "proxy": {
-    "/api/*": {
-      "target": "http://130.245.171.72",
-      "changeOrigin": true,
-      "pathRewrite": {
-        "^/api": ""
-      }
-    }
-  },
   "browserslist": [
     ">0.2%",
     "not dead",

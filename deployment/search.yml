@@ -12,6 +12,7 @@
         state: latest
 
     - name: Install gpg key for Elastic
+      become: yes
       apt_key:
         url: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
         state: present

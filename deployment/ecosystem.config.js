@@ -11,7 +11,7 @@ module.exports = {
       // SSH user
       user: "ubuntu",
       // SSH host
-      host: ["smores02"],
+      host: ["localhost"],
       // SSH options with no command-line flag, see 'man ssh'
       // can be either a single string or an array of strings
       ssh_options: "StrictHostKeyChecking=no",

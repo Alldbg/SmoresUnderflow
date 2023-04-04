@@ -1,0 +1,13 @@
+20925:C 04 Apr 2023 06:17:15.050 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+20925:C 04 Apr 2023 06:17:15.050 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=20925, just started
+20925:C 04 Apr 2023 06:17:15.050 # Configuration loaded
+20926:M 04 Apr 2023 06:17:15.051 * Node configuration loaded, I'm 6ed616b53a00fd13969bdbf0142edb17221656c1
+20926:M 04 Apr 2023 06:17:15.052 * Running mode=cluster, port=7000.
+20926:M 04 Apr 2023 06:17:15.052 # Server initialized
+20926:M 04 Apr 2023 06:17:15.052 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+20926:M 04 Apr 2023 06:17:15.052 * Ready to accept connections
+20926:M 04 Apr 2023 06:17:15.053 - 0 clients connected (0 replicas), 1455584 bytes in use
+20926:signal-handler (1680589037) Received SIGTERM scheduling shutdown...
+20926:M 04 Apr 2023 06:17:17.658 # User requested shutdown...
+20926:M 04 Apr 2023 06:17:17.658 * Removing the pid file.
+20926:M 04 Apr 2023 06:17:17.658 # Redis is now ready to exit, bye bye...

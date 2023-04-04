@@ -19,6 +19,7 @@
 
     - 
       name: "Allow SSH access to other machines from config server" # Don't use become or else it copies files to root dir
+      become: true
       copy:
         src: ~/.ssh/id_rsa
         dest: ~/.ssh/id_rsa

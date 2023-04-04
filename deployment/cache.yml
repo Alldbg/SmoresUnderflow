@@ -13,6 +13,7 @@
         update_cache: true
 
     - name: Ensure Redis started
+      become: true
       service:
         name: redis-server
         state: started

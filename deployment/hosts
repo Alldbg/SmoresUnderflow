@@ -1,9 +1,8 @@
 [instances]
-smores02
+localhost ansible_connection=local 
 
 [cache]
+localhost ansible_connection=local
 
 [search]
-search1
-search2
-search3
+localhost ansible_connection=local

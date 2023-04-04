@@ -1,11 +1,12 @@
 #/bin/bash
 killall redis-server
 
-for port in 7000 7001 7002 7003 7004 7005
+
+for port in 7000
 do
-        cd "/home/ubuntu/clusters/$port"
-        rm redis-server.log
-        ./redis-server redis.conf
+        #cd "/home/ubuntu/clusters/$port"
+        rm /workspace/SmoresUnderflow/redis-server.log
+        redis-server /workspace/SmoresUnderflow/deployment/redis/redis.conf
 done
 
 ps -e | grep redis-server
