@@ -1,6 +1,6 @@
 // TODO: For scaling, modify these so that they point to Nginx endpoints
 
-const gitPodUrl="spiderpig86-smoresunder-22b6r6zwxl3.ws-eu93.gitpod.io/"
+const gitPodUrl="spiderpig86-smoresunder-22b6r6zwxl3.ws-eu93.gitpod.io"
 export const API = `https://3000-${gitPodUrl}`;
 export const ACCOUNTS_API = `https://3001-${gitPodUrl}`;
 export const USER_API = `https://3002-${gitPodUrl}/user`;

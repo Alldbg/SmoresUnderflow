@@ -20,7 +20,7 @@ module.exports = {
       // GIT remote
       repo: "git@gitlab.com:derivatives_/smores-underflow.git",
       // path in the server
-      path: "/home/ubuntu/smores-underflow",
+      path: "/workspace/SmoresUnderflow",
       // Post-setup commands or path to a script on the host machine
       // eg: placing configurations in the shared dir etc
       'post-setup': "ls -la",

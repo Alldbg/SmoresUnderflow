@@ -1,31 +1,38 @@
 ---
 
 - name: account microservice
-  hosts: hw1
+  hosts: localhost
+  connection: local 
   gather_facts: yes
   vars:
     svr: 'search'
     gitlab: ''
-    home_dir: '/home/ubuntu'
-    svr.js_path: '{{ home_dir }}/smores-underflow/su-{{ svr }}/dist/server.js'
+    home_dir: '/workspace'
+    svr_js_path: '{{ home_dir }}/SmoresUnderflow/su-{{ svr }}/dist/server.js'
+
 
   tasks:
+    - name: Display svr_js_path variable
+      debug:
+       msg: "{{ svr_js_path }}"
+
     #copy repo
-    - name: clone repo
-      git:
-        repo: {{ gitlab }}
-        dest: /home/ubuntu/hw0/
-      become: yes
+    #Disabled :Not usefull for me
+    # - name: clone repo
+    #   git:
+    #     repo: {{ gitlab }}
+    #     dest: /home/ubuntu/hw0/
+    #   become: yes
 
     # install nginx 
     - name: ensure nginx is at the latest version
       apt: name=nginx state=present
-      when: nginx_stat.stat.exists == False
+      #when: nginx_stat.stat.exists == False
       become: yes
 
     - name: copy the nginx config
       copy:
-        src: /home/ubuntu/hw0/ngconfig.cfg
+        src: /workspace/SmoresUnderflow/nginx/nginx.conf
         dest: /etc/nginx/sites-available/default
         remote_src: true
       become: yes
@@ -38,18 +45,16 @@
       become: yes
 
     # install pm2
-    - name: install pm2
-      apt: 
-        name: pm2
-        state: present
-      environment:
-        RUNLEVEL: 1
+    - name: Install pm2
+      become: yes
+      npm: name=pm2 global=yes production=yes
 
     # install nodejs
-    - name: install node 
-      shell: |
-        curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash - && sudo apt-get install -y nodejs
-      become: yes
+    #Skipped some issues,to debug later
+    # - name: install node 
+    #   shell: |
+    #     curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash - && sudo apt-get install -y nodejs
+    #   become: yes
     
     # install forever
     - name: install forever
@@ -61,8 +66,9 @@
       changed_when: false
 
     - name: start server
-      command: forever start {{ svr.js_path }}
-      when: "forever_list.stdout.find('{{ svr.js_path }}') == -1"
+      command: forever start {{  svr_js_path }}
+      # Skipped ,i will execute forever stopall , to debug later
+      #when: "forever_list.stdout.find('{{  svr_js_path }}') == -1"
       become: yes
 
     - name: delete existing pm2 processes if running
@@ -72,7 +78,7 @@
 
 
     - name: start pm2 process
-      command: 'pm2 start -x -i 4 --name "{{ svr }}" --watch {{ svr.js_path }}'
+      command: 'pm2 start -x -i 4 --name "{{ svr }}" --watch {{  svr_js_path }}'
       become: yes
       
     #start nginx
