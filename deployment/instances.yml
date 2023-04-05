@@ -8,13 +8,13 @@
     node_ver: '10'
 
   tasks:
-
-    - name: Install nginx
-      become: yes
-      apt:
-        name: nginx
-        state: latest
-        update_cache: true
+    #Skipped ,my be Gitpod team used this to run ports feat, i have this error in gitpod ==>   module "/usr/share/nginx/modules/ndk_http_module.so" version 1023002 instead of 1023003 in /etc/nginx/modules-enabled/10-mod-http-ndk.conf:1
+    # - name: Install nginx
+    #   become: yes
+    #   apt:
+    #     name: nginx
+    #     state: latest
+    #     update_cache: true
 
     - name: Install MongoDb
       become: yes

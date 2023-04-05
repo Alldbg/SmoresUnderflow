@@ -21,7 +21,7 @@ function listen() {
                     subject: SERVICE.title,
                     text: generateMailBody(String(details.email), String(details.token))
                 };
-                const transporter = (0, nodemailer_1.createTransport)({
+                const transporter = nodemailer_1.createTransport({
                     port: 25,
                     host: 'localhost',
                     tls: {

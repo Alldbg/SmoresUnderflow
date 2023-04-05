@@ -13,7 +13,12 @@ chmod +x ./scripts/*
 
 ./scripts/install.sh
 ./scripts/build.sh
+./scripts/pm2init.sh
 
+cd "/workspace/SmoresUnderflow/su-frontend"
+npm install
+npm run build
+
+cd "/workspace/SmoresUnderflow/"
 
 # ansible-playbook config/ansible.yml 
-
