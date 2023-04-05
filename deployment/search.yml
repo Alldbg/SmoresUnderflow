@@ -43,12 +43,14 @@
 
   handlers:
     - name: Start Elastic
+      become: yes
       service:
         name: elasticsearch
         state: started
         enabled: yes
 
     - name: Start Kibana
+      become: yes
       service:
         name: kibana
         state: started

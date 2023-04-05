@@ -93,6 +93,13 @@
       become: yes
       apt: name=rabbitmq-server update_cache=yes state=latest
 
+    - name: Start rabbitmq
+      become: yes
+      service:
+        name: rabbitmq-server
+        state: started
+        enabled: yes    
+
   handlers:
     - name: restart nginx
       become: yes

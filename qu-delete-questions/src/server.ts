@@ -51,7 +51,7 @@ function listen(questionDb: QuestionDb) {
 connect()
   .then(async (client: MongoClient) => {
     
-    const REDIS_HOST = '130.245.168.122';
+    const REDIS_HOST = 'localhost';
     const REDIS_PORT = 6379;
 
     const cache: Redis.Redis = new Redis(REDIS_PORT, REDIS_HOST, {
