@@ -9,7 +9,7 @@
 // export const SEARCH_API = `https://3005-${gitPodUrl}/search`;
 // export const MEDIA_API = `https://3006-${gitPodUrl}/addmedia`;
 
-export const API = '80-spiderpig86-smoresunder-22b6r6zwxl3.ws-eu93.gitpod.io'; // localhost
+export const API = '80-alldbg-smoresunderflow-9uwr527rss0.ws-eu93.gitpod.io'; // localhost
 export const ACCOUNTS_API = `https://${API}`;
 export const USER_API = `https://${API}/user`;
 export const QUESTIONS_API = `https://${API}/questions`;

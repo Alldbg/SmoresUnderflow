@@ -1,6 +1,3 @@
-node -v
-    16.19.0
-
 curl -o- [https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh](https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh) | bash
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -17,3 +14,7 @@ sudo apt-get update
 sudo apt-get install nginx -y
 
 sudo chmod +777 /etc/nginx/*/*
+
+# copy your nginx config to 
+code /etc/nginx/sites-enabled/default 
+sudo service  nginx  start
