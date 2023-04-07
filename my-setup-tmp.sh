@@ -1,9 +1,12 @@
 # Mongo Installation Not working after in gitpod
 docker pull mongo:4.0.4
 docker run -d -p 27017:27017 --name example-mongo mongo:4.0.4
-
-
 ##
+
+
+
+sudo sysctl -w vm.max_map_count=262144
+
 
 sudo pip3 install ansible
 
